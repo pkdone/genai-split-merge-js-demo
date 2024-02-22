@@ -1,0 +1,42 @@
+Act as a programmer. Take the Java code shown below in the section marked 'CODE' and based on its content, return a JSON response containing data that includes the following:
+
+ * The name of the main public class/interface of the file
+ * Its type ('class' or 'interface')
+ * Its classpath
+ * A very detailed definition of its purpose (you must write at least 6 sentences for this)
+ * A very detailed definition of its implementation (you must write at least 6 sentences for this)
+ * A list of its public methods (if any) - for each public method, include the method's name, its purpose in detail (you MUST write at least 6 sentences for this purpose), a list of its parameters, its return type and a very detailed description of its implementation
+ 
+In the JSON response, do not include any explanations - only provide an RFC8259 compliant JSON response following this format without deviation:
+{
+  "classname": "<className>",
+  "type": "<class | interface>",
+  "classpath": "<classpath>",
+  "purpose": "<detailed-purpose>",
+  "implementation": "<detailed-implementation>",
+  "publicMethods": [
+    {
+      "name": "<name>",
+      "purpose": "<detailed-purpose>",
+      "parameters": [
+        {"<arg1Name>": <arg1Value>},
+        {"<arg2Name>": <arg2Value>}
+      ],
+      "returnType": "<void | returnType>",
+      "description": "<detailed-description>"
+    },
+    {
+      "name": "<name>",
+      "parameters": [
+        {"<arg1Name>": <arg1Value>}
+      ],
+      "returnType": "<void | returnType>",
+      "description": "<detailed-description>"
+    }
+  ]
+}
+
+CODE:
+```java
+{content}
+```
