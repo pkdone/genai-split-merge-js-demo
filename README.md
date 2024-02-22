@@ -22,7 +22,7 @@ This project failed to prove its 'transparent split-merge' goal was possible. Of
 
 1. **Engineer solutions that explicitly break down the problem**. Instead of handling large files in one go, opt for approaches that explicitly break down file processing into different responsibilities. For example, a separate project took a large codebase, decomposing it into individual files before processing each file independently with an LLM and storing the results of each in a database for future retrieval and summarization. A similar approach could be taken to decompose each file further, albeit some of the engineering work outlined in challenge #2 above would still apply. Alternatively, evolving GenAI tooling like LangChain appears to include [the ability to decompose code files](https://python.langchain.com/docs/modules/data_connection/document_transformers/code_splitter) into components. In this case, you could not retain the same original prompt template for processing a single Java class file. Instead, you would be required to construct new prompts targeted at summarising specifically identified components. 
 
-Neither of these approaches completely eradicates the risk of prompts and their completions exceeding the LLM's tokens limit, but they significantly reduce the likelihood and frequency of this occurring.
+Neither of these approaches completely eradicates the risk of prompts and their completions exceeding the LLM's tokens size limit, but they significantly reduce the likelihood and frequency of this occurring.
 
 
 ## Prerequisites
