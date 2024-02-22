@@ -30,7 +30,7 @@ This project failed to prove its 'transparent split-merge' goal was possible. Of
     - [Node.js JavaScript runtime](https://nodejs.dev/en/download/package-manager/)
     - [`npm` package manager CLI](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-1. Ensure you have an OpenAI or Azure OpenAI API and set of models accessible with the following model type available to use, along with appropriate API keys / credentials:
+1. Ensure you have an OpenAI or Azure OpenAI API and the following model type available to use, along with appropriate API key / credentials:
 
     -  __Text completions model with an 8k token limit__ for generating text and JSON summaries for dealing with small content (e.g. `gpt-4`)
     
