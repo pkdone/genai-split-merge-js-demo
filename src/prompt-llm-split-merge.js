@@ -42,7 +42,7 @@ async function main() {
   } else if (result.status === STATUS_EXCEEDED) {
     console.error(`FAILURE: LLM request token size ${result.promptTokens} exceeded limit of ${result.tokensLimit}`);
   } else {
-    console.error(`FAILURE: Unable error occure whilst LLM attempting to process prompt for text completio`);
+    console.error(`FAILURE: An unknown error occured whilst LLM attempting to process prompt for text completion`);
   }
 }
 
@@ -69,7 +69,7 @@ async function sendPromptToLLM(llmClient, prompt) {
     const response = responses?.choices[0];
 
     if (!response) {
-      throw new Error("Completetion response contained no choices with response messages");
+      throw new Error("Completion response contained no choices with response messages");
     } else if (response?.finishReason === "length") {      
       result = extractTokensAmountAndLimitFromResponseMetadata(responses.usage);
       result.status = STATUS_EXCEEDED;
